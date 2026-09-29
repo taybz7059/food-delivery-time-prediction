@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DeliverIQ | Food Delivery Prediction</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+
+<body>
+
+    <!-- 🌌 Background -->
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+
+    <!-- 🧭 Navbar -->
+    <nav class="navbar">
+
+       <div class="logo">
+    <div class="brand-name">
+        🚴 <span>Deliver</span>IQ
+    </div>
+
+    <div class="brand-subtitle">
+        Time Prediction
+    </div>
+</div>
+
+        <div class="nav-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#predict">Predict</a>
+
+            <a href="#about">About</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- 🏠 Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+
+            <div class="badge">
+                ⚡ MACHINE LEARNING PROJECT
+            </div>
+
+
+            <h1>
+
+              Food Delivery
+
+           <span>Time Prediction</span>
+
+</h1>
+
+
+            <p>
+
+                Predict food delivery time using Machine Learning
+                based on traffic, distance, weather and delivery information
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#predict"
+                    class="primary-btn"
+                >
+
+                    🚀 Start Prediction
+
+                </a>
+
+
+                <a
+                    href="#about"
+                    class="secondary-btn"
+                >
+
+                    Learn More
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- 📊 Model Card -->
+        <div class="hero-card">
+
+            <div class="card-title">
+
+                MODEL PERFORMANCE
+
+            </div>
+
+
+            <div class="stats">
+
+                <div class="stat-box">
+
+                    <h2>3.15</h2>
+
+                    <p>MAE</p>
+
+                    <small>minutes</small>
+
+                </div>
+
+
+                <div class="stat-box">
+
+                    <h2>82.5%</h2>
+
+                    <p>R² Score</p>
+
+                    <small>model performance</small>
+
+                </div>
+
+            </div>
+
+
+            <div class="model-status">
+
+                <span class="status-dot"></span>
+
+                Random Forest Model Active
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 🤖 Prediction Section -->
+    <section
+        class="prediction-section"
+        id="predict"
+    >
+
+        <div class="section-heading">
+
+            <div class="badge">
+
+                🤖 LIVE ML PREDICTION
+
+            </div>
+
+
+            <h2>
+
+                Estimate Delivery Time
+
+            </h2>
+
+
+            <p>
+
+                Enter a few order details and let
+                DeliverIQ predict the estimated delivery time.
+
+            </p>
+
+        </div>
+
+
+        <div class="prediction-container">
+
+
+            <!-- 📝 Form -->
+            <div class="form-card">
+
+                <h3>
+
+                    Delivery Details
+
+                </h3>
+
+
+                <p class="form-subtitle">
+
+                    Enter the order information below
+
+                </p>
+
+
+                <form id="predictionForm">
+
+
+                    <div class="form-grid">
+
+
+                        <!-- 👤 Age -->
+                        <div class="input-group">
+
+                            <label>
+                                Delivery Person Age
+                            </label>
+
+                            <input
+                                type="number"
+                                id="age"
+                                value="25"
+                                min="18"
+                                max="70"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- ⭐ Rating -->
+                        <div class="input-group">
+
+                            <label>
+                                Delivery Rating
+                            </label>
+
+                            <input
+                                type="number"
+                                id="rating"
+                                value="4.8"
+                                min="1"
+                                max="5"
+                                step="0.1"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- 🚦 Traffic -->
+                        <div class="input-group">
+
+                            <label>
+                                Traffic Density
+                            </label>
+
+                            <select id="traffic">
+
+                                <option value="Low">
+                                    Low
+                                </option>
+
+                                <option value="Medium">
+                                    Medium
+                                </option>
+
+                                <option value="High" selected>
+                                    High
+                                </option>
+
+                                <option value="Jam">
+                                    Jam
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- 🔧 Vehicle Condition -->
+                        <div class="input-group">
+
+                            <label>
+                                Vehicle Condition
+                            </label>
+
+                            <input
+                                type="number"
+                                id="vehicleCondition"
+                                value="3"
+                                min="0"
+                                max="5"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- 📦 Multiple Deliveries -->
+                        <div class="input-group">
+
+                            <label>
+                                Multiple Deliveries
+                            </label>
+
+                            <select id="multipleDeliveries">
+
+                                <option value="0">
+                                    0
+                                </option>
+
+                                <option value="1" selected>
+                                    1
+                                </option>
+
+                                <option value="2">
+                                    2
+                                </option>
+
+                                <option value="3">
+                                    3
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- 📍 Distance -->
+                        <div class="input-group">
+
+                            <label>
+                                Distance (km)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="distance"
+                                value="5"
+                                min="0"
+                                max="100"
+                                step="0.1"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- 🌤️ Weather -->
+                        <div class="input-group">
+
+                            <label>
+                                Weather
+                            </label>
+
+                            <select id="weather">
+
+                                <option value="Sunny" selected>
+                                    Sunny
+                                </option>
+
+                                <option value="Cloudy">
+                                    Cloudy
+                                </option>
+
+                                <option value="Fog">
+                                    Fog
+                                </option>
+
+                                <option value="Sandstorms">
+                                    Sandstorms
+                                </option>
+
+                                <option value="Stormy">
+                                    Stormy
+                                </option>
+
+                                <option value="Windy">
+                                    Windy
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- 🍔 Order Type -->
+                        <div class="input-group">
+
+                            <label>
+                                Order Type
+                            </label>
+
+                            <select id="orderType">
+
+                                <option value="Meal" selected>
+                                    Meal
+                                </option>
+
+                                <option value="Drinks">
+                                    Drinks
+                                </option>
+
+                                <option value="Snack">
+                                    Snack
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- 🛵 Vehicle -->
+                        <div class="input-group">
+
+                            <label>
+                                Vehicle Type
+                            </label>
+
+                            <select id="vehicleType">
+
+                                <option
+                                    value="motorcycle"
+                                    selected
+                                >
+                                    Motorcycle
+                                </option>
+
+                                <option value="scooter">
+                                    Scooter
+                                </option>
+
+                                <option value="electric_scooter">
+                                    Electric Scooter
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- 🎉 Festival -->
+                        <div class="input-group">
+
+                            <label>
+                                Festival
+                            </label>
+
+                            <select id="festival">
+
+                                <option value="No" selected>
+                                    No
+                                </option>
+
+                                <option value="Yes">
+                                    Yes
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- 🏙️ City -->
+                        <div class="input-group">
+
+                            <label>
+                                City
+                            </label>
+
+                            <select id="city">
+
+                                <option value="Urban" selected>
+                                    Urban
+                                </option>
+
+                                <option value="Semi-Urban">
+                                    Semi-Urban
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- ⏱️ Pickup Delay -->
+                        <div class="input-group">
+
+                            <label>
+                                Pickup Delay (minutes)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="pickupDelay"
+                                value="10"
+                                min="0"
+                                step="0.1"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- 🚀 Button -->
+                    <button
+                        type="submit"
+                        class="predict-btn"
+                        id="predictButton"
+                    >
+
+                        🔮 Predict Delivery Time
+
+                    </button>
+
+
+                </form>
+
+            </div>
+
+
+            <!-- 🎯 Result -->
+            <div class="result-card">
+
+                <div class="result-icon">
+
+                    ⏱️
+
+                </div>
+
+
+                <p class="result-label">
+
+                    ESTIMATED DELIVERY TIME
+
+                </p>
+
+
+                <div id="result">
+
+                    <span class="result-number">
+
+                        --
+
+                    </span>
+
+                    <span class="result-unit">
+
+                        minutes
+
+                    </span>
+
+                </div>
+
+
+                <p id="resultMessage">
+
+                    Enter the delivery details and
+                    your prediction will appear here.
+
+                </p>
+
+
+                <div class="result-info">
+
+                    <div>
+
+                        🤖 ML Powered
+
+                    </div>
+
+
+                    <div>
+
+                        ⚡ Instant Prediction
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 📊 About Section -->
+    <section
+        class="about-section"
+        id="about"
+    >
+
+        <div class="section-heading">
+
+            <div class="badge">
+
+                📊 HOW IT WORKS
+
+            </div>
+
+
+            <h2>
+
+                From Data to Prediction
+
+            </h2>
+
+
+            <p>
+
+                DeliverIQ uses a trained Machine Learning
+                model to estimate delivery time.
+
+            </p>
+
+        </div>
+
+
+        <div class="workflow">
+
+
+            <div class="workflow-card">
+
+                <div class="workflow-number">
+
+                    01
+
+                </div>
+
+                <h3>
+
+                    User Input
+
+                </h3>
+
+                <p>
+
+                    Enter delivery and order information.
+
+                </p>
+
+            </div>
+
+
+            <div class="workflow-arrow">
+
+                →
+
+            </div>
+
+
+            <div class="workflow-card">
+
+                <div class="workflow-number">
+
+                    02
+
+                </div>
+
+                <h3>
+
+                    FastAPI
+
+                </h3>
+
+                <p>
+
+                    The backend receives and validates
+                    the information.
+
+                </p>
+
+            </div>
+
+
+            <div class="workflow-arrow">
+
+                →
+
+            </div>
+
+
+            <div class="workflow-card">
+
+                <div class="workflow-number">
+
+                    03
+
+                </div>
+
+                <h3>
+
+                    ML Model
+
+                </h3>
+
+                <p>
+
+                    Random Forest processes the
+                    delivery information.
+
+                </p>
+
+            </div>
+
+
+            <div class="workflow-arrow">
+
+                →
+
+            </div>
+
+
+            <div class="workflow-card">
+
+                <div class="workflow-number">
+
+                    04
+
+                </div>
+
+                <h3>
+
+                    Prediction
+
+                </h3>
+
+                <p>
+
+                    Estimated delivery time is displayed.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- 🦶 Footer -->
+    <footer>
+
+        <div class="footer-logo">
+
+            🚴 Deliver<span>IQ</span>
+
+        </div>
+
+
+        <p>
+
+            Smart Food Delivery Time Prediction
+
+        </p>
+
+
+        <p class="creator">
+
+            Built by
+            <strong>Taiyab Mota</strong>
+
+        </p>
+
+
+        <p class="copyright">
+
+            Python • FastAPI • Machine Learning
+
+        </p>
+
+    </footer>
+
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>
