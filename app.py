@@ -9,6 +9,7 @@ import pandas as pd
 import joblib
 
 
+
 # 🚀 Create FastAPI App
 app = FastAPI(
     title="Food Delivery Time Prediction API",
@@ -110,6 +111,11 @@ class DeliveryInput(BaseModel):
     Festival: str
 
     City: str
+
+
+@app.get("/google1370806243e2cebd.html")
+def google_verification():
+    return FileResponse("google1370806243e2cebd.html")
 
 
 # 🏠 Website Home
