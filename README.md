@@ -1,5 +1,21 @@
 # 🍔 Food Delivery Time Prediction
 
+<p align="center">
+
+<a href="https://food-delivery-time-prediction-bfsg.onrender.com/">
+<img src="https://img.shields.io/badge/🌐%20Live%20Demo-Visit%20Website-success?style=for-the-badge">
+</a>
+
+<a href="https://github.com/taybz7059/food-delivery-time-prediction">
+<img src="https://img.shields.io/badge/🐙%20GitHub-Source%20Code-black?style=for-the-badge">
+</a>
+
+</p>
+
+<p align="center">
+  <b>Machine Learning Web Application for Food Delivery Time Prediction</b>
+</p>
+
 ## 📌 Project Overview
 
 Food Delivery Time Prediction is a Machine Learning project that predicts the estimated delivery time of a food order in minutes.
@@ -10,6 +26,19 @@ The trained Machine Learning model is deployed as a web application using FastAP
 
 ---
 
+---
+
+## 🖥️ Project Screenshots
+
+### 🏠 Home Page
+
+![Food Delivery Prediction Website](screenshots/home.png)
+
+### 📊 Prediction Result
+
+![Prediction Result](screenshots/prediction.png)
+
+---
 ## 🎯 Objective
 
 The main objective of this project is to build a Machine Learning model that can accurately predict food delivery time and provide predictions through a user-friendly web application.
